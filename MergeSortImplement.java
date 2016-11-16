@@ -32,7 +32,7 @@ public class MergeSortImplement {
 		while (rightIndex <= rightNumberList.size()) {
 			numberList.set(index, rightNumberList.get(rightIndex));
 			index++;
-			rightIndex++;
+			rightIndex++; 
 		}
 	}
 	
