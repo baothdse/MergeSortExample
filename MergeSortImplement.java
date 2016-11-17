@@ -3,13 +3,15 @@ package merge;
 import java.util.ArrayList;
 
 public class MergeSortImplement {
-	public void merge(ArrayList<Integer> numberList, ArrayList<Integer> leftNumberList,
-			ArrayList<Integer> rightNumberList) {
+	// merge 2 sub-ArrayList to make a new ArrayList
+	public void merge(ArrayList<Integer> numberList, ArrayList<Integer> leftNumberList, ArrayList<Integer> rightNumberList) {
+		
 		int index = 0;
 		int leftIndex = 0;
 		int rightIndex = 0;
 
 		while (leftIndex < leftNumberList.size() && rightIndex < rightNumberList.size()) {
+			//compare & add the bigger element to numberList 
 			if (leftNumberList.get(leftIndex) < rightNumberList.get(rightIndex)) {
 				numberList.set(index, leftNumberList.get(leftIndex));
 				index++;
@@ -20,7 +22,8 @@ public class MergeSortImplement {
 				rightIndex++;
 			}
 		}
-
+		
+		//add the rest of leftNumberList to numberList
 		if (rightIndex >= rightNumberList.size()) {
 			while (leftIndex < leftNumberList.size()) {
 				numberList.set(index, leftNumberList.get(leftIndex));
@@ -28,7 +31,8 @@ public class MergeSortImplement {
 				leftIndex++;
 			}
 		}
-
+		
+		//add the rest of rightNumberList to numberList
 		if (leftIndex >= leftNumberList.size()) {
 			while (rightIndex < rightNumberList.size()) {
 				numberList.set(index, rightNumberList.get(rightIndex));
@@ -46,12 +50,15 @@ public class MergeSortImplement {
 		int mid = numberList.size() / 2;
 		ArrayList<Integer> leftNumberList = new ArrayList<Integer>();
 		ArrayList<Integer> rightNumberList = new ArrayList<Integer>();
-		for (int i = 0; i < mid; i++) {
-			leftNumberList.add(numberList.get(i));
+		
+		// Add elements from position 1st - (mid -1) of numberList to leftNumberList 
+		for (int index = 0; index < mid; index++) {
+			leftNumberList.add(numberList.get(index));
 		}
-
-		for (int i = mid; i <= numberList.size() - 1; i++) {
-			rightNumberList.add(numberList.get(i));
+		
+		// Add elements from mid - end of numberList to leftNumberList 
+		for (int index = mid; index <= numberList.size() - 1; index++) {
+			rightNumberList.add(numberList.get(index));
 		}
 		mergeSort(leftNumberList);
 		mergeSort(rightNumberList);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MergeSortTest {
 	public static void main(String[] args) {
-		MergeSortImplement test = new MergeSortImplement();
+		MergeSortImplement MergeSort = new MergeSortImplement();
         ArrayList<Integer> listOfNumber = new ArrayList<Integer>();
         listOfNumber.add(5);
         listOfNumber.add(10);
@@ -16,7 +16,8 @@ public class MergeSortTest {
         listOfNumber.add(20);
         listOfNumber.add(10);
         listOfNumber.add(13);
-        test.mergeSort(listOfNumber);
+        
+        MergeSort.mergeSort(listOfNumber);
         System.out.println(listOfNumber);
     }
 }
